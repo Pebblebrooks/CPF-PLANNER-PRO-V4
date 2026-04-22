@@ -3385,5 +3385,11 @@ export default function App() {
                 isForeigner={isForeigner}
               />
             )}
+        </div>
+      </main>
+    </div>
+  );
 }
+
+export default App;
 
