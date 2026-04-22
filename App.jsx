@@ -3385,11 +3385,10 @@ export default function App() {
                 isForeigner={isForeigner}
               />
             )}
-        </div>
-      </main>
-    </div>
-  );
+          </div> {/* Closes cpf-tab-content */}
+        </main>
+      </div>
+    );
 }
 
 export default App;
-
