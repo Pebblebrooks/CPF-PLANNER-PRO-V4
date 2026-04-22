@@ -3385,5 +3385,12 @@ export default function App() {
                 isForeigner={isForeigner}
               />
             )}
+          </div>
+        </section>
+      </div>
+    </div>
+    </ErrorBoundary>
+  </TooltipContext.Provider>
+  );
 }
 
