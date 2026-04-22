@@ -27,12 +27,12 @@ import {
   MMSS_PILOT_START_YEAR, MMSS_PILOT_END_YEAR,
   LIFE_EVENT_TYPES, DRAW_SOURCE_LABELS, WINDFALL_DEST_LABELS,
   PR_CONTRIBUTION_RATES, PR_FG_CONTRIBUTION_RATES, getPRRates,
-} from './config/constants.js';
+} from './src/config/constants.js';
 
 import {
   LEGAL_DISCLAIMER, DEFAULT_INPUTS, PRESET_PROFILES,
   INPUT_LABELS, SCENARIO_LABELS,
-} from './config/presets.js';
+} from './src/config/presets.js';
 
 // ── Engines & actuarial ──────────────────────────────────────────────────────
 import {
@@ -41,18 +41,18 @@ import {
   solveEffectiveRate, interpolateCpfLife,
   computeBasicPlanParams, computeBasicPlanYearPayout,
   computeSensitivityRow,
-} from './engine/actuarial.js';
-import { runProjectionEngine } from './engine/projectionEngine.js';
-import { runRSSEngine }        from './engine/rssEngine.js';
+} from './src/engine/actuarial.js';
+import { runProjectionEngine } from './src/engine/projectionEngine.js';
+import { runRSSEngine }        from './src/engine/rssEngine.js';
 
 // ── Utilities ────────────────────────────────────────────────────────────────
-import { formatCurrency, computeXIRR, lzCompress, lzDecompress } from './utils/helpers.js';
-import { generatePDF } from './utils/generatePDF.js';
+import { formatCurrency, computeXIRR, lzCompress, lzDecompress } from './src/utils/helpers.js';
+import { generatePDF } from './src/utils/generatePDF.js';
 
 // ── Custom hooks ─────────────────────────────────────────────────────────────
-import { useProjection } from './hooks/useProjection.js';
-import { useMilestones } from './hooks/useMilestones.js';
-import { useAnalytics }  from './hooks/useAnalytics.js';
+import { useProjection } from './src/hooks/useProjection.js';
+import { useMilestones } from './src/hooks/useMilestones.js';
+import { useAnalytics }  from './src/hooks/useAnalytics.js';
 
 // ── Shared components ─────────────────────────────────────────────────────────
 import { TooltipContext, TooltipBox, FreqToggle, ErrorBoundary } from './SharedComponents.jsx';
@@ -61,15 +61,15 @@ import { TooltipContext, TooltipBox, FreqToggle, ErrorBoundary } from './SharedC
 import Sidebar from './Sidebar.jsx';
 
 // ── Tab components ────────────────────────────────────────────────────────────
-import WelcomeTab      from './tabs/WelcomeTab.jsx';
-import SummaryTab      from './tabs/SummaryTab.jsx';
-import AccumulationTab from './tabs/AccumulationTab.jsx';
-import RSSTab          from './tabs/RSSTab.jsx';
-import LifeTab         from './tabs/LifeTab.jsx';
-import CompareTab      from './tabs/CompareTab.jsx';
-import TableTab        from './tabs/TableTab.jsx';
-import NotesTab        from './tabs/NotesTab.jsx';
-import StrategyTab     from './tabs/StrategyTab.jsx';
+import WelcomeTab      from './src/tabs/WelcomeTab.jsx';
+import SummaryTab      from './src/tabs/SummaryTab.jsx';
+import AccumulationTab from './src/tabs/AccumulationTab.jsx';
+import RSSTab          from './src/tabs/RSSTab.jsx';
+import LifeTab         from './src/tabs/LifeTab.jsx';
+import CompareTab      from './src/tabs/CompareTab.jsx';
+import TableTab        from './src/tabs/TableTab.jsx';
+import NotesTab        from './src/tabs/NotesTab.jsx';
+import StrategyTab     from './src/tabs/StrategyTab.jsx';
 
 export default function App() {
   const rootRef = useRef(null); // used for sandbox-safe downloads
